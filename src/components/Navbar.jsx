@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   return (
     <header className="">
-      <nav className="bg-dark text-white d-flex fs-3 justify-content-around d-md-none d-lg-none ">
+      <nav className="navbar text-white d-flex fs-3 justify-content-around d-md-none d-lg-none ">
         <div>
           <i className="bi bi-list"></i>
         </div>
