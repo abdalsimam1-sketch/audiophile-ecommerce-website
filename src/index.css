@@ -34,7 +34,7 @@
 
   --h6-size: 18px;
   --h6-line-height: 19px;
-  --h6-letter-space: 1.3px;
+  --h6-letter-space: 10px;
 
   --overline-size: 14px;
   --overline-line-height: 19px;
@@ -146,15 +146,15 @@ h6 {
   background-color: var(--black);
 }
 .btn.button3 {
-  color: var(--dark-grey);
-  background-color: var(--white);
+  color: grey;
+  background-color: var(--dark-grey);
 }
 .btn.button3:hover {
   color: var(--light-orange);
-  background-color: var(--white);
+  background-color: var(--dark-grey);
 }
 .button-icon {
-  color: var(--dark-orange);
+  color: var(--dark-orange) !important;
 }
 .form-control:focus {
   border-color: var(--dark-orange);
@@ -162,10 +162,12 @@ h6 {
 .form-control.isInValid {
   border: red;
 }
-
+a:hover {
+  color: var(--dark-orange);
+}
 /* Navbar */
-.navbar {
-  background-color: var(--dark);
+.nav-bar {
+  background-color: var(--black);
 }
 /* Home page  */
 
@@ -174,7 +176,15 @@ h6 {
   background-image: url(./assets/home/mobile/image-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+/* Catergory Section */
+.category-img {
+  width: 15rem;
+}
+.category-row .card {
+  background-color: var(--dark-grey);
 }
 
 /* Tablet */
