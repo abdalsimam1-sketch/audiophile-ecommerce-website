@@ -200,6 +200,9 @@ i:hover {
 .zx9-section img {
   width: 20rem;
 }
+.zx9-text {
+  max-width: 430px;
+}
 
 /* Footer */
 .footer {
