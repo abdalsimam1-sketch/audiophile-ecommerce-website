@@ -22,7 +22,7 @@ export const Categories = () => {
       <div className="container">
         <div className="row category-row">
           {categoires.map((category, index) => (
-            <div className="col-11 mx-auto col-md-4 col-lg-4 g-4">
+            <div className="col-11 mx-auto col-md-4 col-lg-4 g-4 ">
               <div
                 key={index}
                 className="card h-100 category-section d-flex flex-column align-items-center"

@@ -162,13 +162,16 @@ h6 {
 .form-control.isInValid {
   border: red;
 }
-a:hover {
+a:hover,
+i:hover {
   color: var(--dark-orange);
 }
+
 /* Navbar */
 .nav-bar {
   background-color: var(--black);
 }
+
 /* Home page  */
 
 /* Hero section */
@@ -187,6 +190,25 @@ a:hover {
   background-color: var(--dark-grey);
 }
 
+/* ZX9 speaker section */
+.zx9-section {
+  background-color: var(--dark-orange);
+  background-image: url(./assets/home/desktop/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.zx9-section img {
+  width: 20rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark);
+}
+
+.footer-text {
+  max-width: 420px;
+}
 /* Tablet */
 @media (min-width: 768px) {
   .hero-section {

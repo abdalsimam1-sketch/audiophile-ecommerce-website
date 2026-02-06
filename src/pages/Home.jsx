@@ -1,5 +1,7 @@
 import { Button1 } from "../components/buttons/Button1";
+import { Button2 } from "../components/buttons/Button2";
 import { Categories } from "../components/Categories";
+import zx9 from "../assets/home/desktop/image-speaker-zx9.png";
 export const Home = () => {
   return (
     <main>
@@ -19,8 +21,22 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="categories-section ">
+      <section className="categories-section mb-5">
         <Categories></Categories>
+      </section>
+
+      <section className="zx9-section container">
+        <div className="zx9-img ">
+          <img src={zx9} alt="zx9 speaker" className="img-fluid" />
+        </div>
+        <div className="zx9-text text-white ">
+          <h1>ZX9 speaker</h1>
+          <p>
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound. See product
+          </p>
+          <Button2 text="SEE PRODUCT"></Button2>
+        </div>
       </section>
     </main>
   );

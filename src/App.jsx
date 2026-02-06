@@ -1,13 +1,23 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Home } from "./pages/Home";
+import { Footer } from "./components/Footer";
+import { Category } from "./pages/Category";
+import { Details } from "./pages/Details";
+import { Checkout } from "./pages/Checkout";
+import { PageNotFound } from "./pages/PageNotFound";
 function App() {
   return (
     <>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/details" element={<Details></Details>}></Route>
+        <Route path="/Category" element={<Category></Category>}></Route>
+        <Route path="checkout" element={<Checkout></Checkout>}></Route>
+        <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </>
   );
 }
