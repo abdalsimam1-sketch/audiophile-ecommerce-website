@@ -139,7 +139,7 @@ h6 {
 }
 .btn.button2 {
   color: var(--black);
-  background-color: var(--white);
+  background-color: rgba(255, 255, 255, 0.378);
 }
 .btn.button2:hover {
   color: var(--white);
@@ -196,12 +196,36 @@ i:hover {
   background-image: url(./assets/home/desktop/pattern-circles.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-left: 0%;
 }
 .zx9-section img {
   width: 20rem;
 }
 .zx9-text {
   max-width: 430px;
+}
+
+/* ZX7 speaker section */
+
+.zx7-section {
+  background-image: url(./assets/home/mobile/image-speaker-zx7.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 320px;
+}
+
+/* YX1 section */
+.yx1-section > div {
+  flex: 1;
+  background-size: cover;
+  min-height: 212px;
+}
+.yx1-left {
+  background-image: url(./assets/home/mobile/image-earphones-yx1.jpg);
+  background-repeat: no-repeat;
+}
+.yx1-right {
+  background-color: var(--dark-grey);
 }
 
 /* Footer */
@@ -222,5 +246,20 @@ i:hover {
 @media (min-width: 1024px) {
   .hero-section {
     background-image: url(./assets/home/desktop/image-hero.jpg);
+  }
+  .zx7-section {
+    background-image: url(./assets/home/desktop/image-speaker-zx7.jpg);
+    background-position: center;
+    padding-left: 50rem;
+  }
+  .yx1-left {
+    background-image: url(./assets/home/desktop/image-earphones-yx1.jpg);
+    min-height: 212px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .yx1-section > div {
+    background-size: cover;
+    min-height: 320px;
   }
 }
