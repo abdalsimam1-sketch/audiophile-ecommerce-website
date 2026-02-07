@@ -48,6 +48,13 @@ export const Home = () => {
         </div>
       </section>
 
+      <section className="container zx7-section d-flex text-center text-md-start align-items-center justify-content-center justify-content-md-between ps-5 ">
+        <div className="zx7-items">
+          <h1>zx7 speaker</h1>
+          <Button2 text="SEE PRODUCT"> </Button2>
+        </div>
+      </section>
+
       <section className="container p-md-0 yx1-section d-flex flex-column flex-md-row  gap-3 mb-5 text-center ">
         <div className="yx1-left rounded"></div>
         <div className="yx1-right rounded d-flex flex-column justify-content-center">

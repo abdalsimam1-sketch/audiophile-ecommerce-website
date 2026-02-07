@@ -203,6 +203,13 @@ i:hover {
   max-width: 350px;
 }
 /* ZX7 speaker section */
+.zx7-section {
+  background-image: url(./assets/home/mobile/image-speaker-zx7.jpg);
+  min-height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /* YX1 section */
 .yx1-section > div {
@@ -237,7 +244,13 @@ i:hover {
   .hero-section {
     background-image: url(./assets/home/desktop/image-hero.jpg);
   }
-
+  .zx7-section {
+    background-image: url(./assets/home/desktop/image-speaker-zx7.jpg);
+    min-height: 320px;
+  }
+  .zx7-section > div {
+    margin-left: 7rem;
+  }
   .yx1-left {
     background-image: url(./assets/home/desktop/image-earphones-yx1.jpg);
     min-height: 212px;
