@@ -184,6 +184,7 @@ i:hover {
   background-image: url(./assets/home/mobile/image-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   min-height: 100vh;
 }
 

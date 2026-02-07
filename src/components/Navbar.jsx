@@ -9,7 +9,7 @@ export const Navbar = () => {
         </div>
         <div>
           {" "}
-          <img src={logo} alt="audiophile logo" />
+          <img src={logo} alt="audiophile logo" className="img-fluid" />
         </div>
         <div>
           <i className="bi bi-cart "></i>
