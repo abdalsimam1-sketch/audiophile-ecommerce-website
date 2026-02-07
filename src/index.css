@@ -133,6 +133,11 @@ h6 {
   color: var(--white);
   background-color: var(--dark-orange);
 }
+.best {
+  font-size: var(--h1-size);
+  letter-spacing: var(--h1-letter-space);
+  color: var(--dark-orange);
+}
 .btn.button1:hover {
   color: var(--white);
   background-color: var(--light-orange);
@@ -233,6 +238,17 @@ i:hover {
 .footer-text {
   max-width: 420px;
 }
+
+/* Description Section */
+
+.description-section > div {
+  flex: 1 !important;
+  width: 100%;
+}
+.guy-pic {
+  overflow: hidden;
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   .hero-section {
@@ -260,5 +276,8 @@ i:hover {
   .yx1-section > div {
     background-size: cover;
     min-height: 320px;
+  }
+  .description-text {
+    max-width: 450px;
   }
 }
