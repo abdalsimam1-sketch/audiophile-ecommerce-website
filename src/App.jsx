@@ -13,7 +13,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/details" element={<Details></Details>}></Route>
-        <Route path="/Category" element={<Category></Category>}></Route>
+        <Route
+          path="/category/:categoryName"
+          element={<Category></Category>}
+        ></Route>
         <Route path="checkout" element={<Checkout></Checkout>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>

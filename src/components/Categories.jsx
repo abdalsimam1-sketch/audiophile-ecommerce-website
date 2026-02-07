@@ -2,19 +2,23 @@ import headphones from "../assets/shared/desktop/image-category-thumbnail-headph
 import speakers from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphones from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import { Button3 } from "../components/buttons/Button3";
+import { Link } from "react-router-dom";
 export const Categories = () => {
   const categoires = [
     {
       image: headphones,
       name: "headphones",
+      category: "headphones",
     },
     {
       image: speakers,
       name: "speakers",
+      category: "speakers",
     },
     {
       image: earphones,
       name: "earphones",
+      category: "earphones",
     },
   ];
   return (
@@ -31,7 +35,12 @@ export const Categories = () => {
                 />
                 <div className="category-card-description d-flex flex-column">
                   <h6>{category.name}</h6>
-                  <Button3 text="SHOP"></Button3>
+                  <Link
+                    to={`/category/${category.category}`}
+                    className="mx-auto"
+                  >
+                    <Button3 text="SHOP"></Button3>
+                  </Link>
                 </div>
               </div>
             </div>
