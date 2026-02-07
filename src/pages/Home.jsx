@@ -5,7 +5,7 @@ import zx9 from "../assets/home/desktop/image-speaker-zx9.png";
 import yx1 from "../assets/home/desktop/image-earphones-yx1.jpg";
 export const Home = () => {
   return (
-    <main>
+    <main className="d-flex flex-column gap-4 ">
       <section className="hero-section text-center text-lg-start  text-white d-flex align-items-center ">
         <div className="container">
           <div className="row">
@@ -22,30 +22,29 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="categories-section mb-5">
+      <section className="categories-section ">
         <Categories></Categories>
       </section>
 
-      <section className=" mx-3 text-center text-md-start pb-5 ">
-        <div className="zx9-section container d-flex flex-column flex-md-row align-items-center justify-content-around p-5  rounded ">
-          <div className="zx9-img">
-            <img src={zx9} alt="zx9 speaker" className="img-fluid" />
-          </div>
-          <div className="zx9-text text-white ">
-            <h1>ZX9 speaker</h1>
-            <p>
-              Upgrade to premium speakers that are phenomenally built to deliver
-              truly remarkable sound. See product
-            </p>
+      <section className="zx9-section container d-flex flex-column flex-md-row text-center text-md-start pb-5 rounded text-white p-5 gap-3">
+        <div className="d-flex justify-content-center ">
+          <img
+            src={zx9}
+            alt="zx9 image"
+            className="img-fluid"
+            style={{ width: "15rem" }}
+          />
+        </div>
+        <div className="d-flex flex-column justify-content-center">
+          <h1>ZX9 speaker</h1>
+          <p className="zx9-text">
+            {" "}
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound. See product
+          </p>
+          <div>
             <Button2 text="SEE PRODUCT"></Button2>
           </div>
-        </div>
-      </section>
-
-      <section className="container p-md-0 p-5 zx7-section d-flex flex-column justify-content-center align-items-center align-items-md-start  mb-5 rounded">
-        <div className="ms-md-5 ">
-          <h1>zx7 speaker</h1>
-          <Button2 text="SEE PRODUCT" className=""></Button2>
         </div>
       </section>
 

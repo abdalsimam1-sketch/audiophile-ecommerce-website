@@ -194,25 +194,15 @@ i:hover {
 .zx9-section {
   background-color: var(--dark-orange);
   background-image: url(./assets/home/desktop/pattern-circles.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-left: 0%;
-}
-.zx9-section img {
-  width: 20rem;
-}
-.zx9-text {
-  max-width: 430px;
-}
-
-/* ZX7 speaker section */
-
-.zx7-section {
-  background-image: url(./assets/home/mobile/image-speaker-zx7.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   min-height: 320px;
 }
+.zx9-section > div {
+  flex: 1;
+}
+.zx9-section p {
+  max-width: 350px;
+}
+/* ZX7 speaker section */
 
 /* YX1 section */
 .yx1-section > div {
@@ -247,11 +237,7 @@ i:hover {
   .hero-section {
     background-image: url(./assets/home/desktop/image-hero.jpg);
   }
-  .zx7-section {
-    background-image: url(./assets/home/desktop/image-speaker-zx7.jpg);
-    background-position: center;
-    padding-left: 50rem;
-  }
+
   .yx1-left {
     background-image: url(./assets/home/desktop/image-earphones-yx1.jpg);
     min-height: 212px;
