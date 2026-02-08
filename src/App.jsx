@@ -6,13 +6,18 @@ import { Category } from "./pages/Category";
 import { Details } from "./pages/Details";
 import { Checkout } from "./pages/Checkout";
 import { PageNotFound } from "./pages/PageNotFound";
+import { Scroll } from "./components/Scroll";
 function App() {
   return (
     <>
+      <Scroll></Scroll>
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/details" element={<Details></Details>}></Route>
+        <Route
+          path="/details/:productName"
+          element={<Details></Details>}
+        ></Route>
         <Route
           path="/category/:categoryName"
           element={<Category></Category>}

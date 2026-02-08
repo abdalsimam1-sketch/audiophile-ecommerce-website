@@ -11,13 +11,16 @@ export const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-8 col-md-6 col-lg-4   mx-auto mx-lg-0">
-              <h6>new product</h6>
+              <span className="overline">NEW PRODUCT</span>
               <h1>XX99 Mark II Headphones</h1>
               <p>
                 Experience natural, lifelike audio and exceptional build quality
                 made for the passionate music enthusiast.
               </p>
-              <Button1 text="SEE PRODUCT"></Button1>
+              <Button1
+                text="SEE PRODUCT"
+                to={`details/xx99-mark-two-headphones`}
+              ></Button1>
             </div>
           </div>
         </div>
@@ -45,14 +48,16 @@ export const Home = () => {
               truly remarkable sound. See product
             </p>
             <div>
-              <Button2 text="SEE PRODUCT"></Button2>
+              <Button2 text="SEE PRODUCT" to="/details/zx9-speaker"></Button2>
             </div>
           </div>
         </section>
         <section className="container zx7-section d-flex text-center text-md-start align-items-center justify-content-center justify-content-md-between ps-5 rounded">
           <div className="zx7-items">
             <h1>zx7 speaker</h1>
-            <Button2 text="SEE PRODUCT"> </Button2>
+            <Button2 text="SEE PRODUCT" to="/details/zx7-speaker">
+              {" "}
+            </Button2>
           </div>
         </section>
       </article>
@@ -61,7 +66,7 @@ export const Home = () => {
         <div className="yx1-left rounded"></div>
         <div className="yx1-right rounded d-flex flex-column justify-content-center">
           <h1>yx1 earphones</h1>
-          <Button2 text="SEE PRODUCT"></Button2>
+          <Button2 text="SEE PRODUCT" to="/details/yx1-earphones"></Button2>
         </div>
       </section>
 

@@ -38,7 +38,10 @@ export const Category = () => {
                   <h6 className="overline">new product</h6>
                   <h1>{item.name}</h1>
                   <p>{item.description}</p>
-                  <Button1 text="SEE PRODUCT"></Button1>
+                  <Button1
+                    text="SEE PRODUCT"
+                    to={`/details/${item.slug}`}
+                  ></Button1>
                 </div>
               </div>
             </div>
