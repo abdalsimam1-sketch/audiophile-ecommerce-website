@@ -9,7 +9,10 @@ export const Navbar = () => {
         </div>
         <div>
           {" "}
-          <img src={logo} alt="audiophile logo" className="img-fluid" />
+          <Link to="/">
+            {" "}
+            <img src={logo} alt="audiophile logo" className="img-fluid" />
+          </Link>
         </div>
         <div>
           <i className="bi bi-cart "></i>
@@ -18,11 +21,13 @@ export const Navbar = () => {
       <nav className=" nav-bar text-white d-flex fs-3 justify-content-around d-none d-md-flex d-lg-none">
         <div className="d-flex gap-3 align-items-center">
           <i className="bi bi-list"></i>
-          <img
-            src={logo}
-            alt="audiophile logo"
-            style={{ width: "7rem", height: "2rem" }}
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="audiophile logo"
+              style={{ width: "7rem", height: "2rem" }}
+            />
+          </Link>
         </div>
 
         <div>
@@ -31,7 +36,9 @@ export const Navbar = () => {
       </nav>
       <nav className=" nav-bar text-white  d-none d-md-none d-lg-flex justify-content-lg-around align-items-lg-center  ">
         <div>
-          <img src={logo} alt="audiophile logo" />
+          <Link to="/">
+            <img src={logo} alt="audiophile logo" />
+          </Link>
         </div>
         <div className="nav-links d-flex align-items-center gap-5">
           <Link>HOME</Link>

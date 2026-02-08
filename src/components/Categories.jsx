@@ -31,13 +31,13 @@ export const Categories = () => {
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="img-fluid category-img "
+                  className="img-fluid category-img h-100 "
                 />
                 <div className="category-card-description d-flex flex-column">
                   <h6>{category.name}</h6>
                   <Link
                     to={`/category/${category.category}`}
-                    className="mx-auto"
+                    className="mx-auto "
                   >
                     <Button3 text="SHOP"></Button3>
                   </Link>

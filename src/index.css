@@ -34,7 +34,7 @@
 
   --h6-size: 18px;
   --h6-line-height: 19px;
-  --h6-letter-space: 10px;
+  --h6-letter-space: 1.3px;
 
   --overline-size: 14px;
   --overline-line-height: 19px;
@@ -168,6 +168,9 @@ h6 {
 .form-control.isInValid {
   border: red;
 }
+.category-card-description > a {
+  text-decoration: none;
+}
 a:hover,
 i:hover {
   color: var(--dark-orange);
@@ -258,6 +261,14 @@ i:hover {
 
 .product-description > div {
   flex: 1;
+}
+/* Details page */
+.details-section > div {
+  flex: 1;
+}
+.increase-btns {
+  background-color: var(--dark-grey);
+  height: 100%;
 }
 
 /* Tablet */
