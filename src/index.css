@@ -271,6 +271,13 @@ i:hover {
   height: 100%;
 }
 
+.features-section > div:nth-child(1) {
+  flex: 1.2;
+}
+.features-section > div:nth-child(2) {
+  flex: 1;
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   .hero-section {
