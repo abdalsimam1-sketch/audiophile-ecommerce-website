@@ -22,7 +22,7 @@ export const Category = () => {
           return (
             <div
               key={item.id}
-              className=" container d-flex flex-column flex-md-row  product-description text-center text-md-start "
+              className=" container d-flex flex-column flex-md-row  product-description  "
             >
               <div className={`${isEven ? "order-md-2" : "order-md-1"}`}>
                 <img
