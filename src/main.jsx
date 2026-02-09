@@ -6,11 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter as Router } from "react-router-dom";
+import { CartProvider } from "./Context/CartContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <CartProvider>
+      <Router>
+        <App />
+      </Router>
+    </CartProvider>
   </StrictMode>,
 );

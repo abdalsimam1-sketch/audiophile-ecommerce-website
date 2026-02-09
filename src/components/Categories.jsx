@@ -3,7 +3,7 @@ import speakers from "../assets/shared/desktop/image-category-thumbnail-speakers
 import earphones from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import { Button3 } from "../components/buttons/Button3";
 import { Link } from "react-router-dom";
-export const Categories = () => {
+export const Categories = ({ closeMenu }) => {
   const categoires = [
     {
       image: headphones,
@@ -38,6 +38,7 @@ export const Categories = () => {
                   <Link
                     to={`/category/${category.category}`}
                     className="mx-auto "
+                    onClick={closeMenu}
                   >
                     <Button3 text="SHOP"></Button3>
                   </Link>

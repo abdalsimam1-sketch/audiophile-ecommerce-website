@@ -1,5 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import data from "../data.json";
+import { Categories } from "../components/Categories";
+import { Description } from "../components/Description";
+import { Button1 } from "../components/buttons/Button1";
 
 export const Details = () => {
   const navigate = useNavigate();
@@ -45,7 +48,7 @@ export const Details = () => {
           </div>
         </div>
       </section>
-      <article className="px-3">
+      <article className="px-md-3">
         <section className="container features-section d-flex flex-column flex-md-row gap-md-5 ">
           <div>
             <h2>features</h2>
@@ -87,6 +90,28 @@ export const Details = () => {
             className="rounded img-fluid h-100 w-100 "
           />
         </div>
+      </section>
+
+      <section className="you-may-like-section container text-center">
+        <div className="row">
+          {filteredProduct.others.map((item, index) => (
+            <div className="col-12 col-md-6 col-lg-4 g-3" key={index}>
+              <div className="card">
+                <img src={item.image.mobile} alt="" />
+                <h3>{item.name}</h3>
+                <Button1
+                  to={`/details/${item.slug}`}
+                  text="SEE PRODUCT"
+                ></Button1>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="categories-description d-flex flex-column gap-4">
+        <Categories></Categories>
+        <Description></Description>
       </section>
     </main>
   );
