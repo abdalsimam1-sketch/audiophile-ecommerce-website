@@ -3,8 +3,12 @@ import data from "../data.json";
 import { Categories } from "../components/Categories";
 import { Description } from "../components/Description";
 import { Button1 } from "../components/buttons/Button1";
+import { useCart } from "../Context/CartContext";
+import { useState, useEffect } from "react";
+import { QuantitySelector } from "../components/QuantitySelector";
 
 export const Details = () => {
+  const { addToCart, cart } = useCart();
   const navigate = useNavigate();
   const { productName } = useParams();
   const filteredProduct = data.find((product) => product.slug === productName);
@@ -16,6 +20,20 @@ export const Details = () => {
       </div>
     );
   }
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
+
+  const [count, setCount] = useState(1);
+  const handleAdd = () => {
+    setCount((prev) => prev + 1);
+  };
+  const handleRemove = () => {
+    if (count > 1) {
+      setCount((prev) => prev - 1);
+    }
+  };
   return (
     <main className="d-flex flex-column gap-4">
       <div className="container">
@@ -37,14 +55,13 @@ export const Details = () => {
             <h1>{filteredProduct.name}</h1>
             <p className="text-muted">{filteredProduct.description}</p>
             <h6 className="">${filteredProduct.price}</h6>
-            <div className="d-flex gap-4 ">
-              <span className="increase-btns h-100 rounded">
-                <i className="btn bi bi-dash-lg "></i>
-                <i className="btn">{}</i>
-                <i className="btn bi bi-plus-lg"></i>
-              </span>
-              <button className="btn button1">ADD TO CART</button>
-            </div>
+            <QuantitySelector
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
+              filteredProduct={filteredProduct}
+              count={count}
+              addToCart={addToCart}
+            ></QuantitySelector>
           </div>
         </div>
       </section>
