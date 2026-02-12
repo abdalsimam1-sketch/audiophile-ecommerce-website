@@ -4,7 +4,10 @@ import { QuantitySelector } from "../components/QuantitySelector";
 export const Cart = () => {
   const { cart, increase, decrease, clear } = useCart();
   return (
-    <main className="ms-auto me-5 modal-section  rounded shadow p-5 d-flex flex-column">
+    <main
+      className=" me-md-5 modal-section  rounded shadow p-5 d-flex flex-column position-fixed bg-light "
+      style={{ zIndex: "9999" }}
+    >
       <div className="d-flex justify-content-between ">
         <h4>cart ({cart.length})</h4>
         <button className="btn" onClick={clear}>

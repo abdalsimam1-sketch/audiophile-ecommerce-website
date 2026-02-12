@@ -9,7 +9,6 @@ export const Description = () => {
             Bringing you the <span className="best">best</span> audio gear
           </h1>
           <p className="text-muted">
-            {" "}
             Located at the heart of New York City, Audiophile is the premier
             store for high end headphones, earphones, speakers, and audio
             accessories. We have a large showroom and luxury demonstration rooms
@@ -20,7 +19,14 @@ export const Description = () => {
         </div>
       </div>
       <div className="rounded guy-pic ">
-        <img src={pic} alt="guy with headphones" className="img-fluid" />
+        <img
+          src={pic}
+          alt="guy with headphones"
+          className="img-fluid"
+          width="800"
+          height="800"
+          loading="lazy"
+        />
       </div>
     </main>
   );

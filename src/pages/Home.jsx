@@ -37,7 +37,8 @@ export const Home = () => {
               src={zx9}
               alt="zx9 image"
               className="img-fluid"
-              style={{ width: "15rem" }}
+              width="300"
+              height="300"
             />
           </div>
           <div className="d-flex flex-column justify-content-center">

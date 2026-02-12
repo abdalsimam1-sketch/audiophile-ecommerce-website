@@ -89,14 +89,14 @@ export const Details = () => {
           <div className=" flex-grow-1">
             <img
               src={filteredProduct.gallery.first.mobile}
-              alt=""
+              alt={filteredProduct.gallery.first.mobile}
               className="rounded img-fluid h-100 w-100  "
             />
           </div>
           <div className=" flex-grow-1">
             <img
               src={filteredProduct.gallery.second.mobile}
-              alt=""
+              alt={filteredProduct.gallery.second.mobile}
               className="rounded img-fluid h-100 w-100 "
             />
           </div>
@@ -104,7 +104,7 @@ export const Details = () => {
         <div style={{ overflow: "hidden" }}>
           <img
             src={filteredProduct.gallery.third.mobile}
-            alt=""
+            alt={filteredProduct.gallery.third.mobile}
             className="rounded img-fluid h-100 w-100 "
           />
         </div>
@@ -115,7 +115,7 @@ export const Details = () => {
           {filteredProduct.others.map((item, index) => (
             <div className="col-12 col-md-6 col-lg-4 g-3" key={index}>
               <div className="card">
-                <img src={item.image.mobile} alt="" />
+                <img src={item.image.desktop} alt={item.name} />
                 <h3>{item.name}</h3>
                 <Button1
                   to={`/details/${item.slug}`}

@@ -193,8 +193,7 @@ i:hover {
 }
 
 /* Catergory Section */
-.category-img {
-}
+
 .category-row .card {
   background-color: var(--dark-grey);
 }
@@ -229,6 +228,8 @@ i:hover {
 .yx1-left {
   background-image: url(./assets/home/mobile/image-earphones-yx1.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .yx1-right {
   background-color: var(--dark-grey);
@@ -279,13 +280,25 @@ i:hover {
 /* Modal Section */
 
 .modal-section {
-  width: 30rem;
+  width: 500px;
+  top: 3;
 }
 
 /* Tablet */
 @media (min-width: 768px) {
   .hero-section {
     background-image: url(./assets/home/tablet/image-header.jpg);
+  }
+  .yx1-left {
+    background-image: url(./assets/home/tablet/image-earphones-yx1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .modal-section {
+    width: 30rem;
+    top: 3;
+    right: 3rem;
   }
 }
 /* Desktop */
@@ -302,9 +315,10 @@ i:hover {
   }
   .yx1-left {
     background-image: url(./assets/home/desktop/image-earphones-yx1.jpg);
-    min-height: 212px;
+    min-height: 320px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
   }
   .yx1-section > div {
     background-size: cover;
@@ -312,5 +326,10 @@ i:hover {
   }
   .description-text {
     max-width: 450px;
+  }
+  .modal-section {
+    width: 30rem;
+    top: 3;
+    right: 0;
   }
 }

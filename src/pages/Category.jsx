@@ -27,8 +27,11 @@ export const Category = () => {
               <div className={`${isEven ? "order-md-2" : "order-md-1"}`}>
                 <img
                   src={item.image.desktop}
-                  alt=""
+                  alt={item.name}
                   className="img-fluid rounded"
+                  loading="lazy"
+                  height="700"
+                  width="700"
                 />
               </div>
               <div

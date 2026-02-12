@@ -15,7 +15,7 @@ export const Navbar = () => {
   };
   return (
     <header className="">
-      <nav className="nav-bar text-white d-flex fs-3 justify-content-around d-md-none d-lg-none ">
+      <nav className="nav-bar text-white d-flex fs-3 justify-content-around d-md-none d-lg-none  ">
         <div>
           <i
             className="bi bi-list btn btn-outline-dark text-white "
@@ -35,12 +35,15 @@ export const Navbar = () => {
       </nav>
       <nav className=" nav-bar text-white d-flex fs-3 justify-content-around d-none d-md-flex d-lg-none">
         <div className="d-flex gap-3 align-items-center">
-          <i className="bi bi-list btn" onClick={toggleMenu}></i>
+          <i
+            className="bi bi-list  btn btn-outline-dark text-white"
+            onClick={toggleMenu}
+          ></i>
           <Link to="/">
             <img
               src={logo}
               alt="audiophile logo"
-              style={{ width: "7rem", height: "2rem" }}
+              style={{ width: "8rem", height: "2rem" }}
             />
           </Link>
         </div>
@@ -66,7 +69,11 @@ export const Navbar = () => {
         </div>
       </nav>
       <div className="d-md-none d-lg-none ">
-        {isOpen && <Categories closeMenu={closeMenu}></Categories>}
+        {isOpen && (
+          <div className="position-fixed " style={{ top: "3rem" }}>
+            <Categories closeMenu={closeMenu}></Categories>
+          </div>
+        )}
       </div>
     </header>
   );
