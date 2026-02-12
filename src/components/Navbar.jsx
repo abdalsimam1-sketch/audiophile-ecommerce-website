@@ -2,8 +2,10 @@ import { useState } from "react";
 import logo from "../assets/shared/desktop/logo.svg";
 import { Link } from "react-router-dom";
 import { Categories } from "./Categories";
+import { useCart } from "../Context/CartContext";
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { toggleCart } = useCart();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -28,7 +30,7 @@ export const Navbar = () => {
           </Link>
         </div>
         <div>
-          <i className="bi bi-cart "></i>
+          <i className="bi bi-cart " onClick={toggleCart}></i>
         </div>
       </nav>
       <nav className=" nav-bar text-white d-flex fs-3 justify-content-around d-none d-md-flex d-lg-none">
@@ -44,7 +46,7 @@ export const Navbar = () => {
         </div>
 
         <div>
-          <i className="bi bi-cart "></i>
+          <i className="bi bi-cart " onClick={toggleCart}></i>
         </div>
       </nav>
       <nav className=" nav-bar text-white  d-none d-md-none d-lg-flex justify-content-lg-around align-items-lg-center  ">
@@ -60,7 +62,7 @@ export const Navbar = () => {
           <Link to="/category/earphones">EARPHONES</Link>
         </div>
         <div>
-          <i className="bi bi-cart fs-3"></i>
+          <i className="bi bi-cart fs-3" onClick={toggleCart}></i>
         </div>
       </nav>
       <div className="d-md-none d-lg-none ">

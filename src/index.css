@@ -194,7 +194,6 @@ i:hover {
 
 /* Catergory Section */
 .category-img {
-  width: 15rem;
 }
 .category-row .card {
   background-color: var(--dark-grey);
@@ -276,6 +275,11 @@ i:hover {
 }
 .features-section > div:nth-child(2) {
   flex: 1;
+}
+/* Modal Section */
+
+.modal-section {
+  width: 30rem;
 }
 
 /* Tablet */

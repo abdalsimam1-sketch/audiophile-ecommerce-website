@@ -56,6 +56,7 @@ export const Details = () => {
             <p className="text-muted">{filteredProduct.description}</p>
             <h6 className="">${filteredProduct.price}</h6>
             <QuantitySelector
+              addBtn="true"
               handleAdd={handleAdd}
               handleRemove={handleRemove}
               filteredProduct={filteredProduct}

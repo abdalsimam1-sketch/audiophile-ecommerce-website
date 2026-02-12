@@ -70,7 +70,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="">
+      <section>
         <Description></Description>
       </section>
     </main>

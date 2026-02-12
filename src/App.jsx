@@ -7,11 +7,15 @@ import { Details } from "./pages/Details";
 import { Checkout } from "./pages/Checkout";
 import { PageNotFound } from "./pages/PageNotFound";
 import { Scroll } from "./components/Scroll";
+import { Cart } from "./components/Cart";
+import { useCart } from "./Context/CartContext";
 function App() {
+  const { modalIsOpen } = useCart();
   return (
     <>
       <Scroll></Scroll>
       <Navbar></Navbar>
+      {modalIsOpen && <Cart />}
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route

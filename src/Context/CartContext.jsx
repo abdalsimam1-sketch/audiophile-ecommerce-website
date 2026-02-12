@@ -3,6 +3,11 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const toggleCart = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
 
   const addToCart = (product, selectedQuantity) => {
     setCart((prev) => {
@@ -56,6 +61,8 @@ export const CartProvider = ({ children }) => {
     decrease,
     clear,
     total,
+    modalIsOpen,
+    toggleCart,
   };
 
   return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
