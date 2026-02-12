@@ -280,8 +280,8 @@ i:hover {
 /* Modal Section */
 
 .modal-section {
-  width: 500px;
-  top: 3;
+  top: 3rem;
+  width: 90%;
 }
 
 /* Tablet */
@@ -297,7 +297,7 @@ i:hover {
   }
   .modal-section {
     width: 30rem;
-    top: 3;
+    top: 3rem;
     right: 3rem;
   }
 }
@@ -328,7 +328,7 @@ i:hover {
     max-width: 450px;
   }
   .modal-section {
-    width: 30rem;
+    width: 500px;
     top: 3;
     right: 0;
   }
