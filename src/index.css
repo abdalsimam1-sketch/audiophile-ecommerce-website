@@ -288,6 +288,12 @@ i:hover {
   width: 15rem;
 }
 
+/* Checkout  */
+.billing-section > div {
+  flex: 1;
+  width: 100%;
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   .hero-section {

@@ -55,6 +55,14 @@ export const CartProvider = ({ children }) => {
   const total = () => {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   };
+  const shipping = 50;
+  const vat = () => {
+    return (20 / 100) * total();
+  };
+
+  const grandTotal = () => {
+    return shipping + total();
+  };
 
   const values = {
     cart,
@@ -63,10 +71,13 @@ export const CartProvider = ({ children }) => {
     increase,
     decrease,
     clear,
-    total,
+
     modalIsOpen,
     toggleCart,
     total,
+    shipping,
+    vat,
+    grandTotal,
   };
 
   return <CartContext.Provider value={values}>{children}</CartContext.Provider>;

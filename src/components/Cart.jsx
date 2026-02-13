@@ -1,18 +1,10 @@
 import { useCart } from "../Context/CartContext";
 import { QuantitySelector } from "../components/QuantitySelector";
 import { Link } from "react-router-dom";
+import { formatCartName } from "../HelperFunctions/NameShortener";
 
 export const Cart = () => {
   const { cart, increase, decrease, clear, total } = useCart();
-  const formatCartName = (name) => {
-    return name
-      .replace("Headphones", "")
-      .replace("Wireless Earphones", "")
-      .replace("Speaker", "")
-      .replace("Mark", "MK")
-      .trim()
-      .toUpperCase();
-  };
 
   return (
     <div className="d-flex flex-column align-items-center ">
