@@ -13,7 +13,7 @@ export const QuantitySelector = ({
     >
       <span className="increase-btns h-100 rounded">
         <i className="btn bi bi-dash-lg " onClick={handleRemove}></i>
-        <i className="btn">{count}</i>
+        <i className=" fw-bold">{count}</i>
         <i className="btn bi bi-plus-lg" onClick={handleAdd}></i>
       </span>
       <button

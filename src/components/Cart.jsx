@@ -1,8 +1,9 @@
 import { useCart } from "../Context/CartContext";
 import { QuantitySelector } from "../components/QuantitySelector";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
-  const { cart, increase, decrease, clear } = useCart();
+  const { cart, increase, decrease, clear, total } = useCart();
   const formatCartName = (name) => {
     return name
       .replace("Headphones", "")
@@ -19,7 +20,7 @@ export const Cart = () => {
         className="  me-md-5 modal-section  rounded shadow  d-flex flex-column  position-fixed bg-light p-5 "
         style={{ zIndex: "9999" }}
       >
-        <div className="d-flex justify-content-between ">
+        <div className="d-flex justify-content-between align-items-center">
           <h4>cart ({cart.length})</h4>
           <button className="btn" onClick={clear}>
             Remove All{" "}
@@ -28,7 +29,7 @@ export const Cart = () => {
 
         <section className="product-details">
           <div>
-            {cart.map((item, index) => (
+            {cart.map((item) => (
               <div
                 key={item.id}
                 className="d-flex justify-content-between align-items-center mb-3"
@@ -40,23 +41,34 @@ export const Cart = () => {
                     style={{ width: "5rem" }}
                     className="rounded"
                   />
-                  <div>
+                  <div className="d-flex flex-column ">
                     <span className="subtitle">
                       {formatCartName(item.name)}
                     </span>
-                    <span>{item.price}</span>
+                    <span className="subtitle text-muted">
+                      ${item.price.toLocaleString()}
+                    </span>
                   </div>
                 </div>
                 <div className="flex-nowrap">
                   <QuantitySelector
-                    handleAdd={increase}
-                    handleRemove={decrease}
+                    handleAdd={() => increase(item.id)}
+                    handleRemove={() => decrease(item.id)}
                     addBtn={false}
                     count={item.quantity}
                   ></QuantitySelector>
                 </div>
               </div>
             ))}
+            <div className="d-flex justify-content-between px-4 mb-5">
+              <span className="subtitle">TOTAL</span>
+              <span className="subtitle">${total().toLocaleString()}</span>
+            </div>
+          </div>
+          <div className="d-flex justify-content-center">
+            <Link to="/checkout">
+              <button className="button1 btn checkout-btn">CHECKOUT</button>
+            </Link>
           </div>
         </section>
       </main>

@@ -27,6 +27,7 @@ export const CartProvider = ({ children }) => {
           name: product.name,
           image: product.image.mobile,
           quantity: selectedQuantity,
+          price: product.price,
         },
       ];
     });
@@ -41,7 +42,7 @@ export const CartProvider = ({ children }) => {
   };
   const decrease = (id) => {
     setCart((prev) => {
-      prev.map((item) =>
+      return prev.map((item) =>
         item.id === id
           ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
           : item,
@@ -51,7 +52,9 @@ export const CartProvider = ({ children }) => {
   const clear = () => {
     setCart([]);
   };
-  const total = () => {};
+  const total = () => {
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  };
 
   const values = {
     cart,
@@ -63,6 +66,7 @@ export const CartProvider = ({ children }) => {
     total,
     modalIsOpen,
     toggleCart,
+    total,
   };
 
   return <CartContext.Provider value={values}>{children}</CartContext.Provider>;

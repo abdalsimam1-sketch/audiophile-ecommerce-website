@@ -54,7 +54,7 @@ export const Details = () => {
             <span className="overline">NEW PRODUCT</span>
             <h1>{filteredProduct.name}</h1>
             <p className="text-muted">{filteredProduct.description}</p>
-            <h6 className="">${filteredProduct.price}</h6>
+            <h6 className="">${filteredProduct.price.toLocaleString()}</h6>
             <QuantitySelector
               addBtn="true"
               handleAdd={handleAdd}

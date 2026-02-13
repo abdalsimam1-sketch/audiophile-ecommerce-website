@@ -277,11 +277,15 @@ i:hover {
 .features-section > div:nth-child(2) {
   flex: 1;
 }
-/* Modal Section */
+/* Modal Section / Cart */
 
 .modal-section {
   top: 3rem;
   width: 90%;
+  width: 380px;
+}
+.checkout-btn {
+  width: 15rem;
 }
 
 /* Tablet */
@@ -299,6 +303,9 @@ i:hover {
     width: 30rem;
     top: 3rem;
     right: 3rem;
+  }
+  .checkout-btn {
+    width: 25rem;
   }
 }
 /* Desktop */
@@ -331,5 +338,8 @@ i:hover {
     width: 500px;
     top: 3rem;
     right: 0rem;
+  }
+  .checkout-btn {
+    width: 25rem;
   }
 }
