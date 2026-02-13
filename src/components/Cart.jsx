@@ -3,6 +3,16 @@ import { QuantitySelector } from "../components/QuantitySelector";
 
 export const Cart = () => {
   const { cart, increase, decrease, clear } = useCart();
+  const formatCartName = (name) => {
+    return name
+      .replace("Headphones", "")
+      .replace("Wireless Earphones", "")
+      .replace("Speaker", "")
+      .replace("Mark", "MK")
+      .trim()
+      .toUpperCase();
+  };
+
   return (
     <div className="d-flex flex-column align-items-center ">
       <main
@@ -31,7 +41,9 @@ export const Cart = () => {
                     className="rounded"
                   />
                   <div>
-                    <span className="subtitle">{item.name}</span>
+                    <span className="subtitle">
+                      {formatCartName(item.name)}
+                    </span>
                     <span>{item.price}</span>
                   </div>
                 </div>
