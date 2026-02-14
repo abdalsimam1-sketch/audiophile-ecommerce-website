@@ -55,7 +55,7 @@ export const CartProvider = ({ children }) => {
   const total = () => {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   };
-  const shipping = 50;
+  const shipping = 0.1 * total();
   const vat = () => {
     return (20 / 100) * total();
   };

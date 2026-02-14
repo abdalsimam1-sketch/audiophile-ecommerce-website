@@ -58,8 +58,8 @@ export const Cart = () => {
             </div>
           </div>
           <div className="d-flex justify-content-center">
-            <Link to="/checkout">
-              <button className="button1 btn checkout-btn">CHECKOUT</button>
+            <Link to="/checkout" className="w-100">
+              <button className="button1 btn  w-100">CHECKOUT</button>
             </Link>
           </div>
         </section>
