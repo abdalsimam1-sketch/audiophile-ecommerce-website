@@ -40,7 +40,7 @@ export const ThankYouModal = () => {
               <p className="text-muted">and {theRest} other (item)s</p>
             </div>
           </article>
-          <section className="black-section p-5 ">
+          <section className="black-section p-5 rounded-bottom">
             <h6 className="text-secondary">grand total</h6>
             <span className="subtitle text-white">${grandTotal()}</span>
           </section>
