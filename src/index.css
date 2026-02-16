@@ -294,6 +294,19 @@ i:hover {
   color: var(--dark-orange);
 }
 
+.section1 {
+  background-color: var(--dark-grey);
+}
+.section2 {
+  background-color: var(--dark);
+}
+
+.grey-section {
+  background-color: var(--dark-grey);
+}
+.black-section {
+  background-color: var(--dark);
+}
 /* Tablet */
 @media (min-width: 768px) {
   .hero-section {

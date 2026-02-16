@@ -9,12 +9,14 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { Scroll } from "./components/Scroll";
 import { Cart } from "./components/Cart";
 import { useCart } from "./Context/CartContext";
+
 function App() {
   const { modalIsOpen } = useCart();
   return (
     <>
       <Scroll></Scroll>
       <Navbar></Navbar>
+
       {modalIsOpen && <Cart />}
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -29,7 +31,7 @@ function App() {
         <Route path="checkout" element={<Checkout></Checkout>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   );
 }
