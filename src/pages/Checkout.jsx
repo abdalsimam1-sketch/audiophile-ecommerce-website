@@ -8,15 +8,61 @@ import cash from "../assets/checkout/icon-cash-on-delivery.svg";
 export const Checkout = () => {
   const { cart, total, shipping, vat, grandTotal } = useCart();
   const [paymentMethod, setPaymentMethod] = useState("e-money");
-  const first = cart[0];
-  const theRest = cart.length - 1;
-  const [formSuccess, setFormSuccess] = useState(false);
-  const handleSubmit = (e) => {
+  const [openModal, setOpenModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    address: "",
+    zip: "",
+    city: "",
+    country: "",
+    payment: "",
+    eMoneyNumber: "",
+    eMoneyPin: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const handleChange = (e) => {
     e.preventDefault();
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const validate = () => {
+    let newErrors = {};
+
+    if (!formData.name) {
+      newErrors.name = "Required";
+    }
+    if (!formData.email.includes("@")) newErrors.email = "Invalid format";
+    if (!formData.address) newErrors.address = "Required";
+    if (!formData.phoneNumber) newErrors.phoneNumber = "Required";
+    if (!formData.zip) newErrors.zip = "Required";
+    if (!formData.city) newErrors.city = "Required";
+    if (!formData.country) newErrors.country = "Required";
+
+    if (paymentMethod === "e-money") {
+      if (!formData.eMoneyNumber) newErrors.eMoneyNumber = "Required";
+      if (!formData.eMoneyPin) newErrors.eMoneyPin = "Required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   if (cart.length < 1) {
-    return <p>...Loading</p>;
+    return (
+      <div
+        className="d-flex justify-content-center align-items-center "
+        style={{ height: "100vh" }}
+      >
+        <h1>cart is currently empty please add something</h1>
+      </div>
+    );
   }
 
   return (
@@ -35,17 +81,32 @@ export const Checkout = () => {
                     label="Name"
                     placeholder="Alexie Ward"
                     className="col-md-6"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    name="name"
+                    error={errors.name}
                   ></TextField>
                   <TextField
                     label="Email Address"
                     placeholder="alexie@mail.com"
                     className="col-md-6"
+                    required
+                    onChange={handleChange}
+                    error={errors.email}
+                    value={formData.email}
+                    name="email"
                   ></TextField>
                 </div>
                 <TextField
                   label="Phone Number"
                   placeholder="+1 202-555-0316"
                   className="col-md-6"
+                  required
+                  onChange={handleChange}
+                  error={errors.phoneNumber}
+                  value={formData.phoneNumber}
+                  name="phoneNumber"
                 ></TextField>
               </section>
               <section className="shipping-section">
@@ -53,23 +114,43 @@ export const Checkout = () => {
                 <TextField
                   label="Address"
                   placeholder="1137 Williams Avenue"
+                  required
+                  onChange={handleChange}
+                  error={errors.address}
+                  value={formData.address}
+                  name="address"
                 ></TextField>
                 <div className="d-flex flex-column flex-md-row gap-3">
                   <TextField
                     label="ZIP code"
                     placeholder="10001"
                     className="col-md-6"
+                    required
+                    onChange={handleChange}
+                    error={errors.zip}
+                    value={formData.zip}
+                    name="zip"
                   ></TextField>
                   <TextField
                     label="City"
                     placeholder="New York"
                     className="col-md-6"
+                    required
+                    onChange={handleChange}
+                    error={errors.city}
+                    value={formData.city}
+                    name="city"
                   ></TextField>
                 </div>
                 <TextField
                   label="Country"
                   placeholder="United States"
                   className="col-md-6"
+                  required
+                  onChange={handleChange}
+                  error={errors.country}
+                  value={formData.country}
+                  name="country"
                 ></TextField>
               </section>
               <section className="payment-section ">
@@ -101,11 +182,21 @@ export const Checkout = () => {
                       label="e-Money Number"
                       placeholder="238521993"
                       className="col-md-6"
+                      required
+                      onChange={handleChange}
+                      error={errors.eMoneyNumber}
+                      value={formData.eMoneyNumber}
+                      name="eMoneyNumber"
                     ></TextField>
                     <TextField
                       label="e-Money PIN"
                       placeholder="6891"
                       className="col-md-6"
+                      required
+                      onChange={handleChange}
+                      error={errors.eMoneyPin}
+                      value={formData.eMoneyPin}
+                      name="eMoneyPin"
                     ></TextField>
                   </div>
                 )}
@@ -181,12 +272,25 @@ export const Checkout = () => {
               </h6>
             </div>
 
-            <button className="btn button1 w-100">Continue</button>
+            <button
+              type="submit"
+              className="btn button1 w-100"
+              onClick={() => validate() && setOpenModal(true)}
+            >
+              CONTINUE & PAY
+            </button>
           </div>
         </div>
       </main>
 
-      <ThankYouModal></ThankYouModal>
+      {openModal && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+          style={{ zIndex: 9999, background: "rgba(0,0,0,0.5)" }}
+        >
+          <ThankYouModal />
+        </div>
+      )}
     </>
   );
 };
