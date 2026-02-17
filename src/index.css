@@ -307,6 +307,9 @@ i:hover {
 .black-section {
   background-color: var(--dark);
 }
+.thank-you-card.container {
+  max-width: 35rem;
+}
 /* Tablet */
 @media (min-width: 768px) {
   .hero-section {
@@ -354,5 +357,8 @@ i:hover {
     width: 500px;
     top: 3rem;
     right: 0rem;
+  }
+  .black-grey {
+    max-height: 10rem;
   }
 }

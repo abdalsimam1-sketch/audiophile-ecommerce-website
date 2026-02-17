@@ -11,22 +11,27 @@ export const ThankYouModal = () => {
 
   return (
     <>
-      <main className="p-5 container shadow">
-        <img src={tick} alt="" />
-        <h1>thank you for your order</h1>
-        <p className="text-muted ">
-          You will recieve an email confirmation shortly
-        </p>
+      <main className="p-5 container shadow card thank-you-card mb-5">
+        <div>
+          <img src={tick} alt="" />
+          <h1>thank you for your order</h1>
+          <p className="text-muted ">
+            You will recieve an email confirmation shortly
+          </p>
+        </div>
 
-        <div className="rounded" style={{ overflow: "hidden" }}>
+        <div
+          className="d-flex flex-column flex-md-row rounded black-grey"
+          style={{ overflow: "hidden" }}
+        >
           <article className="grey-section p-5 ">
-            <section className=" d-flex align-items-center justify-content-between  ">
+            <section className=" d-flex align-items-center justify-content-between gap-md-3 ">
               <div className="d-flex align-items-center ">
                 <img
                   src={first.image}
                   alt={first.name}
                   style={{ width: "5rem" }}
-                  className="rounded"
+                  className="rounded m-0"
                 />
                 <div>
                   <h6 className="subtitle m-0">{formatCartName(first.name)}</h6>
@@ -40,16 +45,19 @@ export const ThankYouModal = () => {
               <p className="text-muted">and {theRest} other (item)s</p>
             </div>
           </article>
-          <section className="black-section p-5 rounded-bottom">
-            <h6 className="text-secondary">grand total</h6>
+          <section
+            className="black-section p-5  d-md-flex flex-md-column align-items-md-center justify-content-md-center"
+            style={{ overflow: "hidden" }}
+          >
+            <h6 className="text-secondary text-nowrap">grand total</h6>
             <span className="subtitle text-white">${grandTotal()}</span>
           </section>
-          <section className="mt-3">
-            <Link to="/">
-              <button className="btn button1 w-100">BACK TO HOME</button>
-            </Link>
-          </section>
         </div>
+        <section className="mt-3">
+          <Link to="/">
+            <button className="btn button1 w-100">BACK TO HOME</button>
+          </Link>
+        </section>
       </main>
     </>
   );
