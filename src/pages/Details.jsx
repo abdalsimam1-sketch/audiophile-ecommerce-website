@@ -111,6 +111,7 @@ export const Details = () => {
       </section>
 
       <section className="you-may-like-section container text-center">
+        <h1>you may also like</h1>
         <div className="row">
           {filteredProduct.others.map((item, index) => (
             <div className="col-12 col-md-6 col-lg-4 g-3" key={index}>
