@@ -31,7 +31,7 @@ function App() {
         <Route path="checkout" element={<Checkout></Checkout>}></Route>
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
       </Routes>
-      {/* <Footer></Footer> */}
+      {<Footer></Footer>}
     </>
   );
 }
