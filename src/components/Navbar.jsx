@@ -82,7 +82,7 @@ export const Navbar = () => {
         <div>
           <i
             className="bi bi-cart btn btn-outline-dark text-white"
-            onClick={toggleCart}
+            onClick={handleCart}
           ></i>
         </div>
       </nav>
