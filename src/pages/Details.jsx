@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import { QuantitySelector } from "../components/QuantitySelector";
 
 export const Details = () => {
-  const { addToCart, cart } = useCart();
+  const { addToCart, toggleCart } = useCart();
   const navigate = useNavigate();
   const { productName } = useParams();
   const filteredProduct = data.find((product) => product.slug === productName);
@@ -20,8 +20,6 @@ export const Details = () => {
       </div>
     );
   }
-
- 
 
   const [count, setCount] = useState(1);
   const handleAdd = () => {

@@ -1,3 +1,5 @@
+import { useCart } from "../Context/CartContext";
+
 export const QuantitySelector = ({
   handleAdd,
   handleRemove,
@@ -6,6 +8,7 @@ export const QuantitySelector = ({
   addToCart,
   addBtn,
 }) => {
+  const { toggleCart } = useCart();
   return (
     <div
       className="d-flex flex-nowrap gap-4 align-self-center"
@@ -18,7 +21,10 @@ export const QuantitySelector = ({
       </span>
       <button
         className={`btn button1 ${addBtn ? "" : "d-none"}`}
-        onClick={() => addToCart(filteredProduct, count)}
+        onClick={() => {
+          addToCart(filteredProduct, count);
+          toggleCart();
+        }}
       >
         ADD TO CART
       </button>
