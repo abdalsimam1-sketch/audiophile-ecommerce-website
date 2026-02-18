@@ -70,7 +70,10 @@ export const Navbar = () => {
       </nav>
       <div className="d-md-none d-lg-none ">
         {isOpen && (
-          <div className="position-fixed " style={{ top: "3rem" }}>
+          <div
+            className="position-fixed "
+            style={{ top: "1rem", height: "100vh", overflow: "auto" }}
+          >
             <Categories closeMenu={closeMenu}></Categories>
           </div>
         )}

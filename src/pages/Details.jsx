@@ -21,9 +21,7 @@ export const Details = () => {
     );
   }
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+ 
 
   const [count, setCount] = useState(1);
   const handleAdd = () => {
@@ -56,7 +54,7 @@ export const Details = () => {
             <p className="text-muted">{filteredProduct.description}</p>
             <h6 className="">${filteredProduct.price.toLocaleString()}</h6>
             <QuantitySelector
-              addBtn="true"
+              addBtn={true}
               handleAdd={handleAdd}
               handleRemove={handleRemove}
               filteredProduct={filteredProduct}
